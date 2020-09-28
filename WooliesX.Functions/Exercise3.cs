@@ -39,10 +39,10 @@ namespace WooliesX.Functions
 
             decimal total;
 
-            //if ((isExpert ?? "").Equals("true", StringComparison.OrdinalIgnoreCase))
+            if ((isExpert ?? "").Equals("true", StringComparison.OrdinalIgnoreCase))
                 total = _trolleyServices.CalculateTotal(trolley);
-            //else
-              //  total = await _trolleyServices.GetTotal(trolley);
+            else
+                total = await _trolleyServices.GetTotal(trolley);
 
 
             return new OkObjectResult(total);
